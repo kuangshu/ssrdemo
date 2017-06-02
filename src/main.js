@@ -1,9 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Hello from './hello'
+import { Provider } from 'react-redux';
+import Todo from './containers/todo';
+import createStore from './store/store';
 
 const store = createStore();
 render(
-    <Hello/>,
+    <Provider store={store}>
+        <Todo />
+    </Provider>,
     document.getElementById('root')
 );
