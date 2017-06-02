@@ -6,7 +6,10 @@ const app = new Koa();
 
 app.use(require('koa-static')(path.join(__dirname, '../build')));
 app.use(views(path.join(__dirname, '../views'), {
-  extension: 'html'
+    extension: 'jsx',
+    map: {
+        jsx: 'react',
+    }
 }));
 app.use(async (ctx, next) => {
     const start = new Date();
@@ -15,6 +18,13 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 app.use(async (ctx) => {
-    await ctx.render('index.html');
+    await ctx.render('index.jsx', {
+        store: {
+            todo: [{
+                completed:false,
+                text:"sssss"
+            }],
+        }
+    });
 });
 app.listen(3000);
