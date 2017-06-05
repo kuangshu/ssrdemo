@@ -6,9 +6,10 @@ const index = (props) => (
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Webpack Sample Project</title>
+        <div id="data" data-react={JSON.stringify(props.store)}></div>
     </head>
     <body>
-        <div id="root" data-redux={JSON.stringify(props.store)}></div>
+        <div id="root"></div>
         <script src="bundle.js"></script>
     </body>
     </html>

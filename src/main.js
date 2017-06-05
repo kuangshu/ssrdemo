@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Todo from './containers/todo';
 import createStore from './store/store';
 
-const initState = document.getElementById('root').dataset.redux;
+const initState = document.getElementById('data').dataset.react;
 const store = createStore(JSON.parse(initState));
 render(
     <Provider store={store}>

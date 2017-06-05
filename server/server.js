@@ -18,7 +18,7 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 app.use(async (ctx) => {
-    await ctx.render('index.jsx', {
+    await ctx.render('index', {
         store: {
             todo: [{
                 completed:false,

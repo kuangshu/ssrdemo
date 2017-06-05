@@ -19,5 +19,5 @@ export default function Store(initState) {
             window.devToolsExtension ? window.devToolsExtension() : undefined
         );
     }
-    return createStore(rootReducer, initState, undefined);
+    return createStore(combineReducers({...rootReducer}), initState, undefined);
 }
