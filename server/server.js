@@ -53,14 +53,5 @@ app.use(async (ctx) => {
             <script src='bundle.js'></script>
         </body>
     `;
-
-    /*await ctx.render('index', {
-        store: {
-            todo: [{
-                completed:false,
-                text:"sssss"
-            }],
-        }
-    });*/
 });
 app.listen(3000);

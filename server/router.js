@@ -12,13 +12,9 @@ api.get('/', async (ctx) => {
 });
 
 const page = new Router();
-page.get('/', async(ctx) => {
-    console.log(ctx.url);
-    ctx.body = '<div>index!</div>'
-});
-page.get('/home', async(ctx) => {
-    console.log(ctx.url);
-    ctx.body = '<div>hallo world!</div>'
+page.get('*', async(ctx) => {
+    //await 
+    ctx.body = '<div>page!</div>'
 });
 
 
